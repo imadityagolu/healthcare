@@ -4,14 +4,13 @@ import { CiSearch } from "react-icons/ci";
 
 function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const menuRef = useRef(null); // Reference to the mobile menu
-    const location = useLocation(); // Get current route
+    const menuRef = useRef(null);
+    const location = useLocation();
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
-    // Close menu on click outside
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -25,12 +24,10 @@ function Header() {
         };
     }, []);
 
-    // Close menu on route change
     useEffect(() => {
         setIsMenuOpen(false);
     }, [location]);
 
-    // Close menu on window resize
     useEffect(() => {
         const handleResize = () => {
             setIsMenuOpen(false);
@@ -45,17 +42,16 @@ function Header() {
     return (
         <>
             <header className="bg-blue-900 relative">
-                {/* Overlay for better text readability */}
+                
                 <div className="relative bg-blue-300/80">
                     <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-                        {/* Title */}
+                        
                         <h1 className="text-2xl font-bold text-gray-100">
                             <Link to="/">Healthcare</Link>
                         </h1>
 
-                        {/* Search Bar and Buttons */}
                         <div className="flex items-center space-x-4">
-                            {/* Search Bar */}
+                            
                             <div className="relative">
                                 <input
                                     type="text"
@@ -72,7 +68,6 @@ function Header() {
                                 </svg>
                             </div>
 
-                            {/* Login and Signup Buttons for Desktop */}
                             <div className="hidden md:flex space-x-2">
                                 <Link
                                     to="/signin"
@@ -88,7 +83,6 @@ function Header() {
                                 </Link>
                             </div>
 
-                            {/* Mobile Menu Button */}
                             <button
                                 className="md:hidden text-white focus:outline-none"
                                 onClick={toggleMenu}
@@ -110,7 +104,6 @@ function Header() {
                         </div>
                     </div>
 
-                    {/* Mobile Menu */}
                     <div
                         ref={menuRef}
                         className={`${isMenuOpen ? 'block' : 'hidden'} md:hidden bg-blue-100/90`}

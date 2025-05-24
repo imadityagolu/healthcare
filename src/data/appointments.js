@@ -1,4 +1,3 @@
-
 const upcomingAppointments = [
   {
     day: 'On Thursday',

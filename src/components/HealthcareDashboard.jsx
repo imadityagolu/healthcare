@@ -3,7 +3,6 @@ import healthData from '../data/healthData.js';
 import upcomingAppointments from '../data/appointments.js';
 import calendarData from '../data/calenderData.js';
 
-// Data
 const navLinks = [
   { id: 1, name: 'Dashboard', icon: <User className="h-5 sm:h-5 w-5 sm:w-5" /> },
   { id: 2, name: 'History', icon: <ListOrdered className="h-5 sm:h-5 w-5 sm:w-5" /> },

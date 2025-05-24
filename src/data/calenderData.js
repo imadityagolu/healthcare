@@ -1,4 +1,3 @@
-
 const calendarData = {
   month: 'October 2021',
   appointments: [
